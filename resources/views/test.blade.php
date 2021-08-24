@@ -12,12 +12,10 @@
             
                    <p><a href="{{ route('product.add') }}" type="button">Add Product</a></p>
                   <ul class="list-group">
-                    @foreach ($products as $item)
+                    @foreach ($product as $item)
                        <li class="list-group-item">
-                          <a href="{{ route('product.details', ['id'=>$item->id]) }}">{{ $item->product }}</a>
-                          <a href="{{ route('product.edit', ['id'=>$item->id]) }}" type="button" style="margin-left:40px;color:blue;">Edit</a>   
-                          <a href="{{ route('product.delete', ['id'=>$item->id]) }}" type="button" style="margin-left:40px;color:blue;">Delete</a>   
-                      </li> 
+                          <a href="#">{{ $item->product }} - (${{ number_format($item->price,2) }})</a>
+                       </li> 
                     @endforeach
                   </ul>
                 </div>
